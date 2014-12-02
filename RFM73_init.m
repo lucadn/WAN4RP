@@ -52,7 +52,7 @@ if(rpiConnected)
         RFM73_activate(spidevID,'73');
         status=RFM73_writeRegister(spidevID,dec2hex(29,2),Bank0_reg_29);
         [reg status]=RFM73_readRegister(spidevID,dec2hex(29,2),1);
-        pause(0.1);
+        %pause(0.1);
         if(reg==0)
              fprintf('Error activating features\n');
         elseif (reg==7)

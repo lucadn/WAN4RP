@@ -10,7 +10,7 @@ function [status] = RFM73_sendPacket( rpidevID,spidevID,type,writeData )
 FIFO_STATUS='17';
 status=RFM73_switch_to_TX(rpidevID,spidevID);
 fifo_status=RFM73_readRegister(spidevID, FIFO_STATUS,1);
-fifo_status_bin=dec2bin(fifo_status);
+fifo_status_bin=dec2bin(fifo_status,8);
 status=0;
 if(fifo_status_bin(end-1)=='1')
     status=-1;
